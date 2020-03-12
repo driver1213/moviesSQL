@@ -7,25 +7,41 @@
     <title>Document</title>
 </head>
 <body>
-    edit blogs
+    Edit blogs
 
     <form action="/editblogs" method="POST">
 
-        <select name="category">
-            <% categories.forEach((record)=>{ %>
-                <option value="<%= record.id  %>"> <%= record.title %> </option>
+        <input type="text" placeholder="title" name="title">
+
+        <select name="category" id="">
+            <% categories.forEach((category) =>{ %>
+                <option value="<%= category.id  %>"> <%= category.title %> </option>
             <%  })  %>
         </select>
 
-        title: <input type="text" name="title" placeholder="title"><br>
+        <select name="author" id="">
+            <% authors.forEach((author) =>{ %>
+                <option value="<%= author.id  %>"> <%= author.name %> </option>
+            <%  })  %>
+        </select>
+
+        <textarea name="body" id="" cols="30" rows="10">
+
+        </textarea>
+
+
+
+        <input type="submit" value="Submit">
+
+
+        <!-- title: <input type="text" name="title" placeholder="title"><br>
 
         release: <input type="text" name="release" placeholder="release date"><br>
 
-        <!-- body: <input type="text" name="body" placeholder="body"><br> -->
+        body: <input type="text" name="body" placeholder="body"><br>
 
-        imageurl: <input type="text" name="imageurl" placeholder="imageurl"><br>
+        imageurl: <input type="text" name="imageurl" placeholder="imageurl"><br> -->
         
-        <input type="submit" value="submit">
 
     </form>
 

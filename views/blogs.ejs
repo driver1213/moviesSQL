@@ -7,20 +7,14 @@
     <title>Document</title>
 </head>
 <body>
-    
+    Blogs 
     <a href="/editblogs">Back to editblogs</a>
     
-    <% blogs.forEach(record => { %>
+    <%= blogs.title %><br>
+    <%= blogs.author_id %><br>
+    <%= blogs.category_id %><br>
+    <%= blogs.body %>
+    <%= blogs.release %>
 
-        <h1> <%= record.title%> </h1>
-
-        <h2> <%= record.release%> </h2>
-
-        <!-- <h3><%= record.body%> </h3> -->
-
-        <img height="120px" src="<%= record.imageurl %>" alt="">
-
-
-    <% }) %>
 </body>
 </html>

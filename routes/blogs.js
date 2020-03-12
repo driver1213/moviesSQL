@@ -1,20 +1,20 @@
 
-const express = require('express');
-let db = require('../models/database');
+const express = require('express')
 const router = express.Router();
+let db = require('../models/database');
 
+router.get('/blogs/:blogid', (req, res)=>{
+    let blogid = req.params.blogid;
 
-router.get('/blogs', (req, res)=>{
-
-    db.query('SELECT * FROM blogs')
+    db.query('SELECT * FROM blogs WHERE id=$1', [blogid])
     .then((results)=>{
-        res.render('blogs',{
-            
-            blogs: results
-
+        res.render('blogs.ejs',{
+            blogs: results[0] // this is an object -this is one record in our database
+        })
+        .catch((error)=>{
+            console.log(error)
         })
     })
-})
-
+});
 
 module.exports = router;

@@ -8,12 +8,10 @@ app.set('view engine', 'ejs');
 
 app.use(express.static('public'));
 
-app.get('/', (req, res)=>{
-    res.send('Home Page')
-});
 
-app.use(require('./routes/blogs'));
-app.use(require('./routes/editblogs'));
+app.use(require('./routes/index.js'));
+app.use(require('./routes/blogs.js'));
+app.use(require('./routes/editblogs.js'));
 
 app.listen(PORT, ()=>{
     console.log(`listening on port ${PORT}`)

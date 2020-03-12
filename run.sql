@@ -40,3 +40,6 @@
 --     imageurl varchar(200)
 -- );
 
+-- DELETE FROM blogs
+
+-- UPDATE authors SET imageurl = '' WHERE id = 1;
