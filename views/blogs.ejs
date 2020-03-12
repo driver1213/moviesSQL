@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <a href="/editblogs">Back to editblogs</a>
+    
+    <% blogs.forEach(record => { %>
+
+        <h1> <%= record.title%> </h1>
+
+        <h2> <%= record.release%> </h2>
+
+        <!-- <h3><%= record.body%> </h3> -->
+
+        <img height="120px" src="<%= record.imageurl %>" alt="">
+
+
+    <% }) %>
+</body>
+</html>

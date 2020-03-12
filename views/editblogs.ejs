@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    edit blogs
+
+    <form action="/editblogs" method="POST">
+
+        <select name="category">
+            <% categories.forEach((record)=>{ %>
+                <option value="<%= record.id  %>"> <%= record.title %> </option>
+            <%  })  %>
+        </select>
+
+        title: <input type="text" name="title" placeholder="title"><br>
+
+        release: <input type="text" name="release" placeholder="release date"><br>
+
+        <!-- body: <input type="text" name="body" placeholder="body"><br> -->
+
+        imageurl: <input type="text" name="imageurl" placeholder="imageurl"><br>
+        
+        <input type="submit" value="submit">
+
+    </form>
+
+
+</body>
+</html>
